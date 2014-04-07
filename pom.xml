@@ -29,16 +29,58 @@
   	<dependency>
   		<groupId>com.google.guava</groupId>
   		<artifactId>guava</artifactId>
-  		<version>15.0</version>
+  		<version>16.0.1</version>
   	</dependency>
   	<dependency>
   		<groupId>com.google.inject</groupId>
   		<artifactId>guice</artifactId>
-  		<version>4.0-beta</version>
+  		<version>4.0-beta4</version>
   	</dependency>
+    <dependency>
+    <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>4.0.1.Final</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.6.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.3.175</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.1.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>1.2.0</version>
+    </dependency>    
   </dependencies>
   
   <build>
+  <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <filtering>true</filtering>
+        </resource>
+    </resources>
+    <testResources>
+        <testResource>
+            <directory>src/test/resources</directory>
+            <filtering>true</filtering>
+        </testResource>
+  </testResources>
+    
   <plugins>
     <plugin>
       <groupId>com.mysema.maven</groupId>
@@ -61,4 +103,5 @@
   <properties>
   	<querydsl.version>3.2.4</querydsl.version>
   </properties>
+  
 </project>
