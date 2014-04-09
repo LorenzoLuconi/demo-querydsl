@@ -2,6 +2,7 @@ package model;
 
 import java.util.Set;
 
+import javax.annotation.Nonnull;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,8 +18,11 @@ public class Author {
 	@Id @GeneratedValue
 	private Integer id;
 	
-	private String fullname;
+	@Nonnull
+	private final String fullname;
 	
 	@ManyToMany(mappedBy="authors")
 	private Set<Book> books = Sets.newHashSet();
+	
+	
 }
